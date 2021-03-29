@@ -1,56 +1,37 @@
 <template>
-    <div>
-        <el-row>
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></el-col>
-        </el-row>
-        <el-row :gutter="10">
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
+    <div class="head-black">
+        <el-row class="container">
+            <el-col :span="24">
+                <div class="head-box">
+                    <el-menu class="el-menu-demo" mode="horizontal" text-color="white">
+                        <el-menu-item index="1">首页</el-menu-item>
+                        <el-submenu index="2">
+                            <template slot="title">分类</template>
+                            <el-menu-item index="2-1">分类1</el-menu-item>
+                            <el-menu-item index="2-2">分类2</el-menu-item>
+                        </el-submenu>
+                        <el-submenu index="3">
+                            <template slot="title">实验室</template>
+                            <el-menu-item index="3-1">实验室1</el-menu-item>
+                            <el-menu-item index="3-2">实验室2</el-menu-item>
+                        </el-submenu>
+                        <el-menu-item index="4">赞赏</el-menu-item>
+                        <el-menu-item index="5">伙伴</el-menu-item>
+                        <el-menu-item index="6">留言板</el-menu-item>
+                        <el-menu-item index="7">关于</el-menu-item>
+                        <div class="search-box" index="">
+                            🔍
+                        </div>
+                        <div class="userinfo" index="">
+                            <div class="no-login-box">
+                                <a href="javascript:void(0);">登录</a>|<a href="javascript:void(0);">注册</a>
+                            </div>
+                        </div>
+                    </el-menu>
+                </div>
+            </el-col>
         </el-row>
     </div>
-    <!-- <div class="nav-box">
-        <ul class="nav-left-box">
-            <li>
-                <a href="#">首页</a>
-            </li>
-            <li>
-                <a href="#">分类</a>
-            </li>
-            <li>
-                <a href="#">实验室</a>
-            </li>
-            <li>
-                <a href="#">赞赏</a>
-            </li>
-            <li>
-                <a href="#">伙伴</a>
-            </li>
-            <li>
-                <a href="#">留言板</a>
-            </li>
-            <li>
-                <a href="#">关于</a>
-            </li>
-        </ul>
-        <ul class="nav-right-box">
-            <li>
-                <a href="#">登录</a>
-            </li>
-            <li>
-                <a href="#">注册</a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-        </ul>
-    </div> -->
 </template>
 <script>
 export default{
@@ -63,19 +44,39 @@ export default{
 </script>
 
 <style type="less">
-    .nav-box{
+    .head-black{
+        width: 100%;
+        background: rgba(40, 42, 44, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    .head-box .el-menu{
+        border: none !important;
+        color: white !important;
+    }
+    .search-box{
+        height: 60px;
+        line-height: 60px;
+        float: right;
 
     }
-    .nav-box .nav-left-box{
-        background-color: skyblue;
-    }
-    .nav-box .nav-right-box{
-        bakckground-color: red;
+    .no-login-box{
+        height: 60px;
+        line-height: 60px;
+        float: right;
     }
 </style>
 
 <style>
-  .el-col {
+  /* .el-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -90,5 +91,5 @@ export default{
   .grid-content {
     border-radius: 4px;
     min-height: 36px;
-  }
+  } */
 </style>
